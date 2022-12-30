@@ -1,11 +1,15 @@
-<!DOCTYPE html>
-<html>
-<head>
-        <title>All Members</title>
-</head>
-<body>
+{% extends 'master.html' %}
+
+{% block title %}All Members{% endblock %}
+
+
+{% block content %}
+<div class= "mycard">
+    <h1>Members</h1>
+    <ul>
     {% for x in mymembers %}
-    <li><a href="details/{{x.id }}">{{ x.fname }} {{ x.lname }}</a></li>
+    <li onclick="window.location = 'details/{{x.id }}'">{{ x.fname }} {{ x.lname }}</li>
     {% endfor %}
-</body>
-</html>
+    </ul>
+    </div>
+{% endblock %}
